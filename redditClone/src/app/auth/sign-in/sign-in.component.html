@@ -1,0 +1,41 @@
+<br><br><br><br>
+ <div class="card card-container" id="one">
+    <div class="card-header">
+        <h5>SIGN IN</h5>
+    </div>
+    <div class="card-body">
+        <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" class="profile-img-card" />
+        <br><br>
+        <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+                <div class="form-group col-5 in1">
+                    <!-- <label>User Name</label> -->
+                    <input type="text" formControlName="username"  class="form-control" placeholder="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">User Name is required</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-5 in2">
+                    <!-- <label>Password</label> -->
+                    <input type="password" formControlName="password"  class="form-control" placeholder="password" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Password is required</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <button  (click) = "onSubmit()">Log In</button>
+            </div>
+        </form>
+    </div>
+</div> 
+<br>
+<div class="card card-container" id="sec">
+    <br>
+    <p><a href="forgot" aria-disabled="true">forgot password?</a></p>
+    <p>New User? - <a href="signUp">SignUp</a></p>
+</div>

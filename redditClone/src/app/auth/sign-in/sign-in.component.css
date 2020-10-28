@@ -1,0 +1,62 @@
+.card{
+  margin-left: 13cm;
+  width: 10cm;
+  align-items: center;
+  box-shadow: grey -4px 2px 2px 2px ;
+}
+
+.card:hover{
+  box-shadow: grey 4px -2px 2px 2px ;
+}
+
+.card:hover .card-header {
+  box-shadow: grey 2px 2px 2px 2px;
+}
+
+.card-header{
+  width: 10cm;
+  text-align: center;
+}
+
+.card-body{
+  align-self: center;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+form{
+  margin-left: 2.4cm;
+}
+
+button{
+  margin-left: 0.15cm;
+  width: 4cm;
+  color: aliceblue;
+  background-color: black;
+}
+
+button:hover{
+  border-color: white;
+  box-shadow: grey 2px 2px 2px 2px ;
+  opacity: 0.6;
+}
+
+#profile-img{
+  /* margin-left: 1.3cm; */
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+}
+
+label{
+  font-family: serif;
+}
+input{
+  width: 4cm;
+}
+input:hover{
+  font-size: 20px;
+  width: 5cm;
+}

@@ -1,0 +1,97 @@
+<div class="card" id="one">
+    <h5 class="card-header">
+        SIGN UP</h5>
+    <div class="card-body">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+                <div class="form-group col-5 in1">
+                    <label>First Name</label>
+                    <input type="text" formControlName="firstName"  class="form-control" placeholder="Your First name" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                        <div *ngIf="f.firstName.errors.maxlength">First Name cannot be more than 15 characters</div>
+                    </div>
+                </div>
+                <div class="form-group col-5 in2">
+                    <label>Last Name</label>
+                    <input type="text" formControlName="lastName"  class="form-control" placeholder="Your Last name" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                        <div *ngIf="f.lastName.errors.maxlength">Last Name cannot be more than 15 characters</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-5 in1">
+                    <label>User Name</label>
+                    <input type="text" formControlName="username"  class="form-control" placeholder="Your User name" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">User Name is required</div>
+                        <div *ngIf="f.username.errors.maxlength">User Name cannot be more than 15 characters</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-row">
+                <div class="form-group col-5 in1">
+                    <label>Email</label>
+                    <input type="text" formControlName="email"  class="form-control" placeholder="@" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                        <div *ngIf="f.email.errors.pattern">Email not valid</div> 
+                    </div>
+                </div>
+
+                <div class="form-group col-5 in2">
+                    <label>Mobile Number</label>
+                    <input type="text" formControlName="mobile"  class="form-control" placeholder="Mobile Number" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
+                    <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                        <div *ngIf="f.mobile.errors.required">Mobile Number is required</div>
+                        <div *ngIf="f.mobile.errors.maxlength">Mobile Number cannot be more than 10 digits</div>
+                        <div *ngIf="f.mobile.errors.minlength">Mobile Number cannot be less than 10 digits</div>
+                        <div *ngIf="f.mobile.errors.pattern">Mobile number not valid</div> 
+                    </div>
+                </div>
+            </div> 
+            
+            <div class="form-row">
+                <div class="form-group col-5 in1">
+                    <label>Password</label>
+                    <input type="password" formControlName="password" class="form-control" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
+                    </div>
+                </div>
+                <div class="form-group col-5 in2">
+                    <label>Confirm Password</label>
+                    <input type="password" formControlName="confirmPassword" placeholder="Re - Enter Password"class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                    <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                        <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                        <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-check">
+                <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+                <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+                <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accepting Terms & Conditions is required</div>
+            </div>
+            <div class="text-center">
+                <button class="w3" (click) = "onSubmit()">Register</button>
+                <button class="w4" type="reset" (click)="onReset()">Reset</button>
+            </div>
+           
+        </form>
+        <div class="alert alert-warning" *ngIf="showError">
+            Signup failed!<br />{{ errorMessage }}
+          </div>
+        <div class="alert alert-success" *ngIf="submitted && !isSignUpFailed">
+      Your registration is successful!
+    </div>
+    </div>
+</div>

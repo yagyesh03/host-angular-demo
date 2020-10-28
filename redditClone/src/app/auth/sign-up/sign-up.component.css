@@ -1,0 +1,52 @@
+#one{
+    border-radius: 0px;
+    font-family: serif;
+    margin: 2cm 5cm 0cm 5cm;
+    background-color: lightblue;
+    box-shadow: grey 0px 0px 5px 5px ;
+    border-left: black;
+    border-left-width: 1cm;
+}
+
+#one:hover{
+    box-shadow: 5px 5px 20px 5px rgb(63, 57, 57);
+    background-color: white;
+}
+
+.w3, .w4{
+    width: 7cm;
+    height: 1cm;
+    font-family: serif;
+    font-size: 20px;
+    margin-right: 0.cm;
+    /* font-color: white; */
+    /* background-color: black; */
+}
+
+.in1, .in2{
+    font-family: serif;
+}
+
+.w4{
+    margin-left: 2cm;
+
+}
+.w3:hover{
+    border-color: green;
+    background-color: green;
+    /* box-shadow: 5px 5px 20px 5px rgb(63, 57, 57); */
+}
+
+.w4:hover{
+    border-color: red;
+    background-color: red;
+    /* box-shadow: 5px 5px 20px 5px red; */
+}
+
+.in2{
+    margin-left: 2cm;
+}
+
+.in1{
+    margin-left: 1cm;
+}
